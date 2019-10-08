@@ -14,7 +14,7 @@ export interface TooltipProps extends InheritedProps {
     iconName?: string;
     menuOffset?:
         MenuOffsetData
-        | ((menuBody: HTMLElement, menuDirection: TooltipProps['direction']) => Required<MenuOffsetData> | undefined);
+        | ((menuBody: HTMLElement, menuDirection: TooltipProps['direction']) => (Required<MenuOffsetData> | undefined));
     onChange?(event: TooltipOnChangeEvent<HTMLDivElement>, data: { open: boolean }): void; // optional/required depending on static carbon lib config
     open?: boolean;
     renderIcon?: React.RefForwardingComponent<any, any>;
