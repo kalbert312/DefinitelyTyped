@@ -8,6 +8,8 @@ import {
     DatePickerInput,
     Dropdown,
     FileUploader,
+    HeaderContainer,
+    HeaderContainerRenderProps,
     NumberInput,
     Slider,
     Tab,
@@ -25,7 +27,7 @@ import {
     FileUploaderItem,
     MultiSelect,
     Tabs,
-} from 'carbon-components-react';
+} from "carbon-components-react";
 import Link from 'carbon-components-react/lib/components/UIShell/Link';
 
 // AccordionItem
@@ -266,6 +268,25 @@ const uisLinkT5 = (
     <Link<TestCompPropsOverwrite> element={TestComp3} someProp="asdf">
         Testing Overwrite
     </Link>
+);
+
+// UIShell - HeaderContainer
+
+const uisHeaderContainerAnonymousRenderTest = (
+    <HeaderContainer render={({ isSideNavExpanded, onClickSideNavExpand }) =>
+        <div onClick={onClickSideNavExpand}>{isSideNavExpanded}</div>
+    }/>
+);
+
+type HeaderContainerComp1Props = { testProp: string };
+const HeaderContainerComp1: React.FC<HeaderContainerComp1Props> = (props) => null;
+
+const uisHeaderContainerConstructorInferenceRenderTest = (
+    <HeaderContainer render={HeaderContainerComp1} />
+);
+
+const uisHeaderContainerConstructorExplicitTypeRenderTest1 = (
+    <HeaderContainer<HeaderContainerComp1Props> render={HeaderContainerComp1} />
 );
 
 // DatePickerInput

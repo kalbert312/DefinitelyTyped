@@ -1,18 +1,16 @@
 import * as React from "react";
+import { FunctionComponentReturn } from "../../../typings/shared";
 
-/**
- * Convenience interface for the custom render prop.
- */
 export interface HeaderContainerRenderProps {
     isSideNavExpanded: boolean,
     onClickSideNavExpand(): void;
 }
 
-export interface HeaderContainerProps {
+export interface HeaderContainerProps<RenderProps = HeaderContainerRenderProps> {
     isSideNavExpanded?: boolean,
-    render: React.ComponentType<HeaderContainerRenderProps>,
+    render: React.ComponentType<RenderProps>,
 }
 
-declare const HeaderContainer: React.FC<HeaderContainerProps>;
+declare function HeaderContainer<RenderProps = HeaderContainerRenderProps>(props: HeaderContainerProps<RenderProps>): FunctionComponentReturn;
 
 export default HeaderContainer;

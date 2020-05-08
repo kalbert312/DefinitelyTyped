@@ -79,3 +79,4 @@ export interface RefForwardingProps<T = HTMLElement> {
 }
 
 export type ForwardRefReturn<T, P = {}> = React.FC<P & React.ClassAttributes<T>>;
+export type FunctionComponentReturn = ReturnType<React.FC>;
