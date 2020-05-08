@@ -10,7 +10,7 @@ export interface HeaderContainerRenderProps {
 
 export interface HeaderContainerProps {
     isSideNavExpanded?: boolean,
-    render: React.ComponentType,
+    render: React.ComponentType<HeaderContainerRenderProps>,
 }
 
 declare const HeaderContainer: React.FC<HeaderContainerProps>;
